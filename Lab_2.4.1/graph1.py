@@ -106,7 +106,8 @@ plt.show()
 
 b0 = (b1 + b2)/2 #average coefficient in the first case
 delta_b0 = (delta_b1+delta_b2)/2
-#print((delta_b1+delta_b2)/2)
+print(b0, " ", delta_b0)
+#267.83791195816264   79.63512112945219 (dP/dT)
 
 delta_p = 13540*9.8*0.001
 delta_L1 = 8.31*T1[0]/P1[0]*np.sqrt(4*(b0*0.1)**2 + (T1[0]*b0*delta_p/P1[0])**2 + (T1[0]*delta_b0)**2)
@@ -114,7 +115,5 @@ delta_L1 = 8.31*T1[0]/P1[0]*np.sqrt(4*(b0*0.1)**2 + (T1[0]*b0*delta_p/P1[0])**2 
 
 b5 = (b3 + b4)/2 #average coefficient in the second case
 delta_b5 = (delta_b3 + delta_b4)/2
-
-#print(b0, " ", b5)
-#print(11311*1000/46)
-#print(-8.31*b5*1000/46)
+print(b5, " ", delta_b5)
+#-4619.487583588178   1363.6247878882282 (d(lnP)/d(1/T))
