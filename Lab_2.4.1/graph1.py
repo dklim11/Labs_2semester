@@ -1,16 +1,16 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-P1 = [215.6*13540/1000, 241.08*13540/1000, 264.6*13540/1000, 293.02*13540/1000, 324*13540/1000, 358.68*13540/1000, 393.96*13540/1000, 433.16*13540/1000, 478.24*13540/1000, 531.16*13540/1000, 587.02*13540/1000, 645.82*13540/1000]
+P1 = [215.6*13.54, 241.08*13.54, 264.6*13.54, 293.02*13.54, 324*13.54, 358.68*13.54, 393.96*13.54, 433.16*13.54, 478.24*13.54, 531.16*13.54, 587.02*13.54, 645.82*13.54]
 T1 = [294, 296, 298, 300, 302, 304, 306, 308, 310, 312, 314, 316]
 
-P2 = [244.02*13540/1000, 267.54*13540/1000, 296.94*13540/1000, 330.26*13540/1000, 365.54*13540/1000, 404.74*13540/1000, 444.92*13540/1000, 490.98*13540/1000, 542.92*13540/1000, 598.78*13540/1000, 645.82*13540/1000]
+P2 = [244.02*13.54, 267.54*13.54, 296.94*13.54, 330.26*13.54, 365.54*13.54, 404.74*13.54, 444.92*13.54, 490.98*13.54, 542.92*13.54, 598.78*13.54, 645.82*13.54]
 T2 = [296, 298, 300, 302, 304, 306, 308, 310, 312, 314, 316]
 
-P3 = [np.log(215.6), np.log(241.08), np.log(264.6), np.log(293.02), np.log(324), np.log(358.68), np.log(393.96), np.log(433.16), np.log(478.24), np.log(531.16), np.log(587.02), np.log(645.82)]
+P3 = [np.log(215.6*13.54), np.log(241.08*13.54), np.log(264.6*13.54), np.log(293.02*13.54), np.log(324*13.54), np.log(358.68*13.54), np.log(393.96*13.54), np.log(433.16*13.54), np.log(478.24*13.54), np.log(531.16*13.54), np.log(587.02*13.54), np.log(645.82*13.54)]
 T3 = [1/294, 1/296, 1/298, 1/300, 1/302, 1/304, 1/306, 1/308, 1/310, 1/312, 1/314, 1/316]
 
-P4 = [np.log(244.02), np.log(267.54), np.log(296.94), np.log(330.26), np.log(365.54), np.log(404.74), np.log(444.92), np.log(490.98), np.log(542.92), np.log(598.78), np.log(645.82)]
+P4 = [np.log(244.02*13.54), np.log(267.54*13.54), np.log(296.94*13.54), np.log(330.26*13.54), np.log(365.54*13.54), np.log(404.74*13.54), np.log(444.92*13.54), np.log(490.98*13.54), np.log(542.92*13.54), np.log(598.78*13.54), np.log(645.82*13.54)]
 T4 = [1/296, 1/298, 1/300, 1/302, 1/304, 1/306, 1/308, 1/310, 1/312, 1/314, 1/316]
 
 #heating
@@ -81,8 +81,9 @@ delta_b4 = np.sqrt(((y_square_av - y_av**2)/(x_square_av - x_av**2) - b4)/11)
 plt.xlabel(r'$x$')
 plt.ylabel(r'$f(x)$')
 plt.title('P-T coordinates')
-plt.plot(T1, P1, label = r'$heating$') #1
-plt.plot(T2, P2, label = r'$cooling$') #2
+#plt.title('lnP-1/T coordinates')
+#plt.plot(T1, P1, label = r'$heating$') #1
+#plt.plot(T2, P2, label = r'$cooling$') #2
 #plt.plot(T3, P3, label = r'$heating$') #3
 #plt.plot(T4, P4, label = r'$cooling$') #4
 p1, v1 = np.polyfit(T1, P1, 1, cov = True)
@@ -91,12 +92,12 @@ p3, v3 = np.polyfit(T3, P3, 1, cov = True)
 p4, v4 = np.polyfit(T4, P4, 1, cov = True)
 #plt.plot(T1, np.poly1d(p1)(T1), label = 'heat_approx') #1
 #plt.plot(T2, np.poly1d(p2)(T2), label = 'cool_approx') #2
-#plt.plot(T3, np.poly1d(p3)(T3), label = 'heat_approx') #3
-#plt.plot(T4, np.poly1d(p4)(T4), label = 'cool_approx') #4
+plt.plot(T3, np.poly1d(p3)(T3), label = 'heat_approx') #3
+plt.plot(T4, np.poly1d(p4)(T4), label = 'cool_approx') #4
 plt.legend(loc = 'best', fontsize = 10)
 plt.grid(True)
-#plt.savefig('approximations.png', dpi = 600)
-#plt.show()
+#plt.savefig('log_approximations.png', dpi = 600)
+plt.show()
 
 #print(b1, " ", delta_b1)
 #print(b2, " ", delta_b2)
@@ -114,3 +115,6 @@ delta_L1 = 8.31*T1[0]/P1[0]*np.sqrt(4*(b0*0.1)**2 + (T1[0]*b0*delta_p/P1[0])**2 
 b5 = (b3 + b4)/2 #average coefficient in the second case
 delta_b5 = (delta_b3 + delta_b4)/2
 
+#print(b0, " ", b5)
+#print(11311*1000/46)
+#print(-8.31*b5*1000/46)
