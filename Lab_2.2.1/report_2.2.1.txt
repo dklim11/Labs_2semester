@@ -1,0 +1,204 @@
+\documentclass[a4paper,12pt]{article}
+
+\frenchspacing
+\usepackage{indentfirst}
+\usepackage{array}
+\usepackage{float}
+\usepackage{latexsym}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english.russian]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{subcaption}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{titlepage}
+		\begin{center}
+			\large 	Московский физико-технический институт \\
+			(национальный исследовательский университет) \\
+			Физтех-школа физики и исследований им.Ландау \\
+			\vspace{0.2cm}
+			
+			\vspace{4.5cm}
+			Лабораторная работа №2.2.1  \\ \vspace{0.2cm}
+			\large (Лабораторный практикум по общей физике) \\ \vspace{0.2cm}
+			\LARGE \textbf{ Исследование взаимной диффузии газов }
+		\end{center}
+		\vspace{2.3cm} \large
+		
+		\begin{center}
+			Работу выполнил: \\
+			Климанов Даниил, группа Б02-115
+			\vspace{10mm}		
+			
+		\end{center}
+		
+		\begin{center} \vspace{20mm}
+			г. Долгопрудный, 2022 
+		\end{center}
+\end{titlepage}
+
+\small  \paragraph*{Цель работы:} 1) Регистрация зависимости концентрации гелия в воздухе от времеги с помощью датчиков теплопроводности при разных начальных давлениях смеси газов; 2) Определение коэффициента диффузии по результатам измерений.
+\small \paragraph*{Оборудование:} измерительная установка; форвакуумный насос; баллон с гелием; манометр; источник питания; магазин сопротивлений; гальванометр; секундомер.  
+
+ \section{Теоретическое введение:}
+	В системе, состоящей из двух компонентов $a$ и $b$, плотность потока вещества определяется законом Фика:\\
+	\begin{equation}
+		J_a = -D_{ab}\cdot  \frac{\partial n_a}{\partial x}  ;  J_b = -D_{ba}\cdot  \frac{\partial n_b}{\partial x}\\
+	\end{equation}
+	, где $D_{ab} = D_{ba}$ - коэффициент взаимной диффузии.
+	
+	В данной работе исследуется диффузия примеси лёгкого газа (гелия) на фоне воздуха. Концентрация воздуха в опыте предполагается значительно большей, чем концентрация гелия. Относительное изменение концентрации воздуха полагаем малым.
+	
+	Если трубка между полостями достаточно тонкая, то выравнивание концентраций компонентов в сосудаъ происходит благодаря диффузии в трубке. Рассмотрим стационарный поток в каждый момент времени: 
+	\begin{eqnarray}
+		\frac{dn}{dx} = \frac{\triangle n}{l} \Rightarrow J = -DS\cdot \frac{n_1 - n_2}{l}\\
+		J = -DS\cdot \frac{n_1 - n_2}{l} = -DS\cdot \frac{\partial n}{\partial x}
+	\end{eqnarray}
+	Первое соотношение - допущение, что $n$ - линейная функция координаты $x$, а второе выражение - следствие первого. 
+	
+	Если $\triangle n_1, \triangle n_2$ - изменение концентраций в сосудах за время $\triangle t$, то заметим, что:
+	\begin{eqnarray}
+		V_1\cdot \triangle n_1 + V_2\cdot \triangle n_2 = 0\\
+		V_1\cdot \triangle n_1 = -V_2\cdot \triangle n_2 = J\triangle t = -DS\cdot  \frac{n_1 - n_2}{l}\\1
+	\end{eqnarray}
+	Следовательно:
+	\begin{eqnarray}
+		V_1 \cdot \frac{dn_1}{dt} = -DS\cdot  \frac{n_1 - n_2}{l}\\
+		V_2 \cdot \frac{dn_2}{dt} = -DS\cdot  \frac{n_1 - n_2}{l}\\
+		\Rightarrow 		\frac{dn_1}{dt} - \frac{dn_2}{dt} = -DS\cdot  \frac{n_1 - n_2}{l}\cdot (\frac{1}{V_1} + \frac{1}{V_2})	\\
+		\Leftrightarrow \frac{d}{dt}(\triangle n) = -\frac{DS}{l}\cdot(\frac{1}{V_1} + \frac{1}{V_2})\cdot \triangle n
+	\end{eqnarray}
+	Это дифференциальное уравнение, решением которого является следующая функция времени: $\triangle n = n_0 \cdot e^{-\frac{t}{\tau}}$, где $\tau = const$ задаётся следующим соотношением:
+	\begin{equation}
+		\tau = \frac{V_1\cdot V_2}{V_1 + V_2}\cdot \frac{l}{S} \cdot \frac{1}{D}
+	\end{equation}
+	
+\section{Экспериментальная установка}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 1\textwidth]{scheme.jpg}
+		\end{center}
+		\label{Установка для измерения взаимной диффузии газов}
+	\end{figure}
+	Схема установки приведена на рисунке 1. Параметры установки и условия проведения эксперимента указаны в таблице ниже:
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ | m{2 cm} | m{2 cm}| m{2 cm} | m{2 cm} |} 
+			\hline
+			$V_1$, см$^3$ & $V_2$, см$^3$ & $P_{atm}$, торр &  $\frac{L}{S}$, см$^{-1}$ \\ 
+			\hline
+			$420 \pm 10$ & $420 \pm 10$ & 757,2 &  $9,0 \pm 0,1$\\
+			\hline
+			\end{tabular}
+	\end{center}
+\end{table}
+	Показания гальванометра N зависят от времени по тому же экспоненциальному закону, что и изменение концентрации.
+\section{Выполнение измерений}
+	Из выражения (11) следует:
+	\begin{eqnarray}
+	\begin{cases}
+		D = (\frac{1}{\tau})\cdot(\frac{l}{S})\cdot \frac{V_1 \cdot V_2}{V_1 + V_2} = [V_1 = V_2 = V] = (\frac{1}{\tau})\cdot(\frac{l}{S})\cdot \frac{V}{2}\\
+		\\
+		\sigma D = \sqrt{(\frac{l}{S}\cdot \frac{V}{2})^2\cdot \sigma^2(\frac{1}{\tau}))+(\frac{1}{\tau}\cdot \frac{V}{2})^2\cdot \sigma^2(\frac{l}{S})+(\frac{1}{\tau}\cdot \frac{l}{S})^2\cdot \sigma^2(\frac{V}{2})}
+	\end{cases}
+	\end{eqnarray}
+	Все величины, кроме $(\frac{1}{\tau})$ - параметры, указанные на установке, поэтому для того, чтобы узнать коэффициент взаимной диффузии $D$[см$^2$/с] и его погрешность, следует найти $(\frac{1}{\tau})$ из графиков в координатах ($\ln N, t$), поскольку:
+	\begin{equation}
+		N = N_0\cdot e^{-\frac{t}{\tau}} \Rightarrow \ln(N) = \ln (N_0) - (\frac{1}{\tau})\cdot t
+	\end{equation}
+	, где $N_0$ - начальные показания гальванометра. Следовательно, $-(\frac{1}{\tau})$ - коэффициент наклона графиков в координатах ($\ln N, t$).
+	
+\section{Обработка измерений}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{first_graph.png}
+		\end{center}
+		\caption{График для $P_1 = 44.7$ торр}
+	\end{figure}
+	
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{second_graph.png}
+		\end{center}
+		\caption{График для $P_2 = 78.3$ торр}
+	\end{figure}
+	
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{third_graph.png}
+		\end{center}
+		\caption{График для $P_3 = 90$ торр}
+	\end{figure}
+	
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{fourth_graph.png}
+		\end{center}
+		\caption{График для $P_4 = 130.5$ торр}
+	\end{figure}
+	
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{fifth_graph.png}
+		\end{center}
+		\caption{График для $P_5 = 261.1$ торр}
+	\end{figure}
+	
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{final_graph.png}
+		\end{center}
+		\caption{Зависимость коэффициентов диффузии от обратного давления}
+	\end{figure}
+	Как видно, графики имеют вид линейных функций, следовательно, изменение концентрации и показания гальванометра зависят от времени по экспоненциальному закону. Значения и погрешности коэффициентов наклона будем рассчитывать по МНК. $b_i = (-1)\cdot (\frac{1}{\tau})_i$ с$^{-1}$, $i = 1, 2, 3, 4, 5$
+	\begin{eqnarray}
+	\begin{cases}
+		b_1 = -(441 \pm 3,2)]\cdot 10^{-5} \Rightarrow D_1 = (8,3 \pm 0,6)\\
+		b_2 = -(2400 \pm 9,1)]\cdot 10^{-6} \Rightarrow D_2 = (4,5 \pm 0,2)\\
+		b_3 = -(2320 \pm 2,6)]\cdot 10^{-6} \Rightarrow D_3 = (4,38 \pm 0,12)\\
+		b_4 = -(1510 \pm 1)]\cdot 10^{-6} \Rightarrow D_4 = (2,85 \pm 0,08)\\
+		b_5 = -(8400 \pm 6)]\cdot 10^{-7} \Rightarrow D_5 = (1,58 \pm 0,04)\\
+	\end{cases}
+	\end{eqnarray}
+	Аналогичным способом найдём коэффициент наклона и свободный коэффициент графика $D(P^{-1})$ :
+	\begin{eqnarray}
+	\begin{cases}
+		D = a_0 + k\cdot(\frac{1}{P})\\
+		\Rightarrow a_0 \approx 0.14 ; k = (362,15 \pm 13,18) 
+	\end{cases}
+	\end{eqnarray}
+	, откуда получаем, что $D_{atm} \approx (0,62 \pm 0,02)$ см$^2$/c.
+\subsection{Оценка длины свободного пробега и размера молекул:}
+	Оценим длину свободного пробега и размер молекулы, считая, что взаимная диффузия обеспечивается в основном гелием. По формуле коэффициента диффузии и соотношению для средней скорости($\lambda$ - длина свободного пробега, $k$ - постоянная Больцмана):
+	\begin{eqnarray}
+	\begin{cases}
+		\overline{v} = \sqrt{\frac{8RT}{\pi \mu}}\\
+		D = \frac{1}{3}\overline{v}\lambda \Rightarrow D = \frac{1}{3}\cdot \sqrt{\frac{8RT}{\pi \mu}}\cdot \lambda \\
+		\pi n d^2 \lambda = 1\\
+		P = nkT \Rightarrow d^2 = \frac{kT}{\pi \lambda P} \\
+	\end{cases}
+	\end{eqnarray}
+	Примем молярную массу гелия $\mu = $0.004 кг/моль; $R = 8.31$ Дж/(моль$\cdot$К); $T \approx 296$К; $k = 1.3\cdot 10^{-23}$ Дж/К. Следовательно, для $\lambda$ и $d$ имеем:
+	\begin{eqnarray}
+		\lambda = \frac{3\cdot D_{atm}\cdot \sqrt{\pi \mu}}{\sqrt{8RT}} = \frac{3\cdot 0,62\cdot 10^{-4}\cdot \sqrt{3,14\cdot 0.004}}{\sqrt{8\cdot 8,31\cdot 296}} \approx 1.48\cdot 10^{-7}\\
+		\sigma \lambda = \frac{3\cdot \sqrt{\pi \mu}}{\sqrt{8RT}}\cdot \sigma(D_{atm}) \approx 5\cdot 10^{-9}\\
+		d = \sqrt{\frac{kT}{\pi \lambda P_{atm}}} \approx  \sqrt{\frac{1,3\cdot10^{-23}\cdot296}{3,14\cdot 1,48\cdot 10^{-7}\cdot 100860}} \approx 2,86\cdot 10^{-10}\\
+		\sigma d = \sqrt{\frac{kT}{\pi \cdot P_{атм}}}\cdot \frac{1}{2\cdot \lambda^{3/2}}\cdot \sigma(\lambda) \approx \sqrt{\frac{1,3\cdot10^{-23}}{3,14\cdot100860}}\cdot \frac{1}{2\cdot(1,48\cdot10^{-7})^{3/2}}\cdot (5\cdot10^{-9}) \approx 2,8\cdot10^{-13}
+	\end{eqnarray}
+	В итоге(значения величин приведены в метрах):
+	\begin{eqnarray}
+	\begin{cases}
+		\lambda = (148 \pm 5)\cdot10^{-9}\\
+		d = (2860 \pm 2,8)\cdot10^{-13}
+	\end{cases}
+	\end{eqnarray}
+\section{Итоги}
+	В работе исследовалось явление взаимной диффузии газов, и были сделаны численные оценки величин коэффициента диффузии, длины свободного пробега и размера молекулы гелия. Также были проверены утверждения из теоретического введения, например, по виду построенных графиков можно было убедиться в том, что зависимость изменения концентрации от времени действительно экспоненциальная. 
+\begin{thebibliography}{}
+    \bibitem{1}  Под редакцией проф. А.Д. Гладуна  -  Лабораторный практикум по общей физике. Термодинамика. Том 1
+\end{thebibliography}
+\end{document}
