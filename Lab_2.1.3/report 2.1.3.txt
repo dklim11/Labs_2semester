@@ -1,0 +1,318 @@
+\documentclass[a4paper,12pt]{article}
+
+\frenchspacing
+\usepackage{indentfirst}
+\usepackage{array}
+\usepackage{float}
+\usepackage{latexsym}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english.russian]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\begin{titlepage}
+		\begin{center}
+			\large 	Московский физико-технический институт \\
+			(национальный исследовательский университет) \\
+			Физтех-школа физики и исследований им.Ландау \\
+			\vspace{0.2cm}
+			
+			\vspace{4.5cm}
+			Лабораторная работа №2.1.3  \\ \vspace{0.2cm}
+			\large (Лабораторный практикум по общей физике) \\ \vspace{0.2cm}
+			\LARGE \textbf{ Определение $C_p/C_v$ по скорости звука в газе }
+		\end{center}
+		\vspace{2.3cm} \large
+		
+		\begin{center}
+			Работу выполнил: \\
+			Климанов Даниил, группа Б02-115
+			\vspace{10mm}		
+			
+		\end{center}
+		
+		\begin{center} \vspace{20mm}
+			г. Долгопрудный, 2022 
+		\end{center}
+\end{titlepage}
+
+\small  \paragraph*{Цель работы:} 1) измерение частоты колебаний и длины волны при резонансе звуковых колебаний в газе, заполняющем трубу; 2) определение показателя адиабаты с помощью уравнения состояния идеального газа. 
+\small \paragraph*{Оборудование:} звуковой генератор ГЗ; электронный осциллограф ЭО; микрофон; телефон; раздвижная труба; теплоизолированная труба, обогреваемая водой из термостата; баллон со сжатым углекислым газом; газгольдер. 
+
+ \section{Теоретическое введение:}
+ 	Показатель адиабаты можно выразить через скорость звука следующим образом:
+ 	\begin{equation}
+ 		\gamma = \frac{\mu}{RT}c^2
+ 	\end{equation}
+	, где R - универсальная газовая постоянная, T - температура газа; $\mu$ - его молярная масса. Следовательно, для определения показателя адиабаты  $\gamma$ нужно измерить температуру газа и скорость распространения звука в нём(если полагать, что известны молярная масса газа и универсальная газовая постоянная). 
+	
+	Звуковое колебание в трубе - наложение всех волн, отражающихся от торцов трубки. Если $L = n\cdot \frac{\lambda}{2}$, где $L, \lambda$ - длина трубы и волны соответственно, $n \in \mathbb{N}$ , то поскольку волна, отражённая от торца трубы, по фазе совпадает с падающей, волны в трубе усиливают друг друга и наступает резонанс.
+	
+	Скорость звука по определению частоты можно представить в следующем виде:
+	\begin{equation}
+		c = \lambda f
+	\end{equation}
+	В работе рассматриваются два способа подбора условия резонанса.
+\subsection{Способ 1:}
+	При неизменной частоте ГЗ длина волны постоянна. Отсюда, для последовательных резонансных длин получаем:
+	\begin{equation}
+		L_n = n\frac{\lambda}{2}; L_{n+1} = (n+1)\frac{\lambda}{2}; \cdots ;L_{n+k} = (n+k)\frac{\lambda}{2}
+	\end{equation}
+	Тогда $\frac{\lambda}{2}$ равно угловому коэффициенту наклона графика L(n), где n - номер резонанса. Далее находим скорость звука и вычисляем $\gamma$.
+\subsection{Способ 2:}
+	При постоянной длине трубы можно изменять частоту звуковых колебаний. Длина волны однозначно соответствует частоте(при прочих равных), поэтому при изменении частоты для последовательных резонансов получим:
+	\begin{eqnarray}
+		L = \frac{\lambda_1}{2}n =  \frac{\lambda_2}{2}(n + 1) = \cdots =  \frac{\lambda_{k + 1}}{2}(n + k)
+		\Rightarrow f_{k + 1} = \frac{c}{\lambda_{k + 1}} = \frac{c}{2L}(n + k) = f_1 + \frac{c}{2L}k
+	\end{eqnarray} 
+	В таком случае $\frac{c}{2L}$ определяется как коэффициент наклона графика зависимости частоты от номера резонанса.
+\section{Экспериментальная установка:}
+	Измерения проводились для температуры T = 22,3 $^{\circ}C$, длина трубы L в задвинутом состоянии равна: $L = 570 \pm 5$мм.
+	Учитывая соотношение $c = \sqrt{\frac{\gamma RT}{\mu}}$, $\mu \approx 29$ г/моль, $R \approx 8,31$ Дж/моль$\cdot$К, предполагаемое значение скорости звука в воздухе $\approx$ 344 м/с. В ходе измерений полагаем молярную массу углекислого газа равной 44 г/моль.
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 1\textwidth]{2.1.3.jpg}
+		\end{center}
+	\end{figure}
+	
+\section{Выполнение измерений:}
+\subsection{Изменение частоты сигнала при постоянной длине трубы - воздух:}
+	В данном пункте при постоянной длине трубы изменялась частота сигнала, в таблице зафиксировано 7 последовательных резонансных частот.
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ | m{3 cm} | m{1 cm}| m{1 cm} | m{1 cm} | m{1 cm} | m{1 cm} | m{1 cm} | m{1 cm} | } 
+			\hline
+			Номер резонанса & 1 & 2 &  3 & 4 & 5 & 6 & 7 \\ 
+			\hline
+			Частота, Гц & 302,8 & 623 &  878 & 1220 & 1320 & 1500 & 1780 \\
+			\hline
+			\end{tabular}
+	\end{center}
+	Резонанс под номером 5 похож на паразитный, поэтому в ходе дальнейших измерений он не будет учитываться.
+\end{table}
+\subsection{Изменение длины трубы при постоянной частоте - воздух:}
+	Измерения проводились для 4-х различных значений частот(указаны в таблице). Под $h$ в таблице обозначается длина в см, на которую выдвинута труба при соответствующем резонансе (резонансы последовательные). 
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ | m{2 cm} | m{1 cm}| m{1 cm} | m{1 cm} | m{1 cm} | } 
+			\hline
+			Частота, кГц & 3,9 & 4,3 &  4,78 & 5,1 \\ 
+			\hline
+			h, см & 22,6 & 19,7 &  19,3 & 21,4 \\
+			\hline
+			h, см & 18 & 15,7 & 15,5 & 18 \\
+			\hline
+			h, см & 13,7 & 11,7 &  12 & 14,6 \\
+			\hline
+			h, см & 9,3 & 7,6 &  8,3 & 11,2 \\
+			\hline
+			h, см & 5 & 3,8 &  4,7 & 8 \\
+			\hline
+			h, см & - & - &  1,3 & 4,5 \\
+			\hline
+			\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{Изменение частоты сигнала при постоянной длине трубы - $CO_2$:}
+	В ходе измерений труба находилась в полностью задвинутом состоянии.
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ | m{3 cm} | m{1 cm}| m{1 cm} | m{1 cm} | m{1 cm} | m{1 cm} | m{1 cm} | m{1 cm} | } 
+			\hline
+			Номер резонанса & 1 & 2 &  3 & 4 & 5 & 6 & 7 \\ 
+			\hline
+			Частота, кГц & 2,1 & 2,35 & 2,58 & 2,83 & 3,04 & 3,28 & 3,52 \\
+			\hline
+			\end{tabular}
+	\end{center}
+	
+\end{table}
+\subsection{Изменение длины трубы при постоянной частоте - $CO_2$:}
+	Аналогично воздуху, измерения проводились для 4-х различных значений частот(указаны в таблице). Под $h$ в таблице обозначается длина в см, на которую выдвинута труба при соответствующем резонансе (резонансы последовательные). 
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ | m{2 cm} | m{1 cm}| m{1 cm} | m{1 cm} | m{1 cm} | } 
+			\hline
+			Частота, кГц & 2,577 & 3,1 & 3,546 & 4,42 \\ 
+			\hline
+			h, см & 21,5 & 21,1 &  19,2 & 22,9 \\
+			\hline
+			h, см & 16,2 & 16,9 & 15,6 & 19,9 \\
+			\hline
+			h, см & 11,1 & 12,5 &  12 & 17 \\
+			\hline
+			h, см & 5,9 & 8,2 &  8,1 & 13,7 \\
+			\hline
+			h, см & 0,8 & 4 &  4,2 & 10,8 \\
+			\hline
+			h, см & - & - &  - & 7,6 \\
+			\hline
+			h, см & - & - &  - & 4,7 \\
+			\hline
+			\end{tabular}
+	\end{center}
+\end{table}
+
+\section{Обработка измерений:}
+\subsection{Изменение длины трубы при постоянной частоте - воздух:}
+	Поскольку частоты последовательные, то будем откладывать $f_k$ от первого значения частоты. Тогда получим, что $\triangle f_k = \frac{c}{2L}\cdot k$.
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{air_freq.png}
+		\end{center}
+		\caption{Изменение последовательных резонансных частот при постоянной длине трубы - воздух}
+	\end{figure}
+	Определим коэффициент наклона графика $b$ и его погрешность $\triangle b$ по МНК:
+	\begin{eqnarray}
+		b  = \frac{c}{2L} = (293,6 \pm 5,6)
+		\rightarrow c = 2\cdot 0,57(293,6 \pm 5,6) = (334,7 \pm 7)
+	\end{eqnarray}
+	Оценим $\gamma = \frac{C_p}{C_v}$:
+	\begin{eqnarray}
+		\begin{cases}
+		\gamma = c^2\cdot \frac{\mu}{RT} \approx \frac{29\cdot0,001}{8,31\cdot 295,3}\cdot (334,7)^2 \approx 1,32\\
+		\triangle(\gamma) \approx \frac{2\mu c}{RT}\sigma c \approx \frac{2\cdot44\cdot0,001\cdot265,7\cdot3,2}{8,31\cdot295,3} \approx 0,07
+		\end{cases}
+	\end{eqnarray}
+\subsection{Изменение длины трубы при постоянной частоте - воздух:}
+	Поскольку ''резонансные'' длины последовательные, то построим график $\triangle L_k = \frac{\lambda}{2}\cdot k$. Пользуясь тем, что скорость звука в среде может быть представлена как $c = \lambda f$, вычислим c по коэффициентам наклона графиков(i-й коэффициенты наклона = $b_i$):
+	\begin{eqnarray}
+	\begin{cases}
+		b_1 = (0,0336 \pm 0,0003)\\
+		b_2 = (0,0364 \pm 0,0004)\\
+		b_3 = (0,0403 \pm 0,0004)\\
+		b_4 = (0,0442 \pm 0,0005)
+	\end{cases}
+	\Rightarrow
+	\begin{cases}
+		c_1 = (343 \pm 3)\\
+		c_2 = (348 \pm 3,5)\\
+		c_3 = (346,6 \pm 3)\\
+		c_4 = (344,8 \pm 4,3)
+	\end{cases}
+	\end{eqnarray}
+	
+	\begin{eqnarray}
+		\begin{cases}
+		c_{av} = \frac{c_1+c_2+c_3+c_4}{4} \approx 345,6\\
+		\sigma c_{av} = \frac{\sigma c_1+\sigma c_2+ \sigma c_3+ \sigma c_4}{4} \approx 3,5
+		\end{cases}
+		\Rightarrow
+		\begin{cases}
+		\gamma = c_{av}^2\cdot \frac{\mu}{RT} \approx \frac{29\cdot0,001}{8,31\cdot 295,3}\cdot (345,6)^2 \approx 1,41\\
+		\triangle(\gamma) \approx \frac{2\mu c_{av}}{RT}\sigma c_{av} \approx \frac{2\cdot29\cdot0,001\cdot345,6\cdot3,5}{8,31\cdot295,3} \approx 0,03
+		\end{cases}
+	\end{eqnarray}
+	
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{L1_air.png}
+		\end{center}
+		\caption{Изменение длины трубы при $f_1 = 3,9$ кГц - воздух}
+	\end{figure}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{L2_air.png}
+		\end{center}
+		\caption{Изменение длины трубы при $f_2 = 4,3$ кГц - воздух}
+	\end{figure}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{L3_air.png}
+		\end{center}
+		\caption{Изменение длины трубы при $f_3 = 4,783$ кГц - воздух}
+	\end{figure}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{L4_air.png}
+		\end{center}
+		\caption{Изменение длины трубы при $f_4 = 5,1$ кГц - воздух}
+	\end{figure}
+	
+\subsection{Изменение длины трубы при постоянной частоте - $CO_2$:}
+	Аналогично измерениям для воздуха, $\triangle f_k = \frac{c}{2L}\cdot k$.
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{co2_freq.png}
+		\end{center}
+		\caption{Изменение последовательных резонансных частот при постоянной длине трубы - воздух}
+	\end{figure}
+	Определим коэффициент наклона графика $b$ и его погрешность $\triangle b$ по МНК:
+	\begin{eqnarray}
+		b = \frac{c}{2L} = (233,1 \pm 1,9)
+		\rightarrow c = 2\cdot 0,57(233,1 \pm 1,9) = (265,7 \pm 3,2)
+	\end{eqnarray} 
+	Исходя из этих данных, оценим $\gamma = \frac{C_p}{C_v}$:
+	\begin{eqnarray}
+		\begin{cases}
+		\gamma = c^2\cdot \frac{\mu}{RT} \approx \frac{44\cdot0,001}{8,31\cdot 295,3}\cdot (265,7)^2 \approx 1,27\\
+		\triangle(\gamma) \approx \frac{2\mu c}{RT}\sigma c \approx \frac{2\cdot44\cdot0,001\cdot265,7\cdot3,2}{8,31\cdot295,3} \approx 0,03
+		\end{cases}
+	\end{eqnarray}
+\subsection{Изменение частоты сигнала при постоянной длине трубы - $CO_2$:}
+	Аналогично подобным измерениям для воздуха, строим график $\triangle L_k = \frac{\lambda}{2}\cdot k$. Пользуясь тем, что скорость звука в среде может быть представлена как $c = \lambda f$, вычислим c по коэффициентам наклона графиков(i-й коэффициенты наклона = $b_i$):
+	\begin{eqnarray}
+	\begin{cases}
+		b_1 = (0,0519 \pm 0,0005)\\
+		b_2 = (0,0364 \pm 0,0004)\\
+		b_3 = (0,0403 \pm 0,0004)\\
+		b_4 = (0,0442 \pm 0,0005)
+	\end{cases}
+	\Rightarrow
+	\begin{cases}
+		c_1 = (267,5 \pm 2,5)\\
+		c_2 = (267,2 \pm 2,7)\\
+		c_3 = (261,7 \pm 4.2)\\
+		c_4 = (276 \pm 7,3)
+	\end{cases}
+	\end{eqnarray}
+	Оценим показатель адиабаты углекислого газа в этом случае:
+	\begin{eqnarray}
+		\begin{cases}
+		c_{av} = \frac{c_1+c_2+c_3+c_4}{4} \approx 268,1\\
+		\sigma c_{av} = \frac{\sigma c_1+\sigma c_2+ \sigma c_3+ \sigma c_4}{4} \approx 4,2
+		\end{cases}
+		\Rightarrow
+		\begin{cases}
+		\gamma = c_{av}^2\cdot \frac{\mu}{RT} \approx \frac{44\cdot0,001}{8,31\cdot 295,3}\cdot (268,1)^2 \approx 1,29\\
+		\triangle(\gamma) \approx \frac{2\mu c_{av}}{RT}\sigma c_{av} \approx \frac{2\cdot44\cdot0,001\cdot268,1\cdot4,2}{8,31\cdot295,3} \approx 0,04
+		\end{cases}
+	\end{eqnarray}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{L1_co2.png}
+		\end{center}
+		\caption{Изменение длины трубы при $f_1 = 2,577$ кГц - $CO_2$}
+	\end{figure}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{L2_co2.png}
+		\end{center}
+		\caption{Изменение длины трубы при $f_2 = 3,1$ кГц - $CO_2$}
+	\end{figure}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{L3_co2.png}
+		\end{center}
+		\caption{Изменение длины трубы при $f_3 = 3,546$ кГц - $CO_2$}
+	\end{figure}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 0.7\textwidth]{L4_co2.png}
+		\end{center}
+		\caption{Изменение длины трубы при $f_4 = 4,42$ кГц - $CO_2$}
+	\end{figure}
+\section{Итоги}
+	В работе с помощью различных методов были измерены скорости звука и показатели адиабаты в углекислом газе и в воздухе при температуре $T = 22,3 ^{\circ}C$. 
+	
+\begin{thebibliography}{}
+    \bibitem{1}  Под редакцией проф. А.Д. Гладуна  -  Лабораторный практикум по общей физике. Термодинамика. Том 1
+\end{thebibliography}
+\end{document}

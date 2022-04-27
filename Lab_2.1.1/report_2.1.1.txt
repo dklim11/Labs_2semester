@@ -1,0 +1,324 @@
+\documentclass[a4paper,12pt]{article}
+
+\frenchspacing
+\usepackage{indentfirst}
+\usepackage{array}
+\usepackage{float}
+\usepackage{latexsym}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english.russian]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{subcaption}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{titlepage}
+		\begin{center}
+			\large 	Московский физико-технический институт \\
+			(национальный исследовательский университет) \\
+			Физтех-школа физики и исследований им.Ландау \\
+			\vspace{0.2cm}
+			
+			\vspace{4.5cm}
+			Лабораторная работа №2.1.1  \\ \vspace{0.2cm}
+			\large (Лабораторный практикум по общей физике) \\ \vspace{0.2cm}
+			\LARGE \textbf{ Измерение удельной теплоёмкости воздуха при постоянном давлении }
+		\end{center}
+		\vspace{2.3cm} \large
+		
+		\begin{center}
+			Работу выполнил: \\
+			Климанов Даниил, группа Б02-115
+			\vspace{10mm}		
+			
+		\end{center}
+		
+		\begin{center} \vspace{20mm}
+			г. Долгопрудный, 2022 
+		\end{center}
+\end{titlepage}
+
+\small  \paragraph*{Цель работы:} 1) измерение повышения температуры воздуха в результате подвода тепл при стационарном течении через стеклянную трубу; 2) вычисление по результатам измерений теплоёмкости воздуха при постоянном давлении.
+\small \paragraph*{Оборудование:} телоизолировання трубка; электронагреватель; источник питания постоянного тока Б5-70; термопара; амперметр; вольтметр; универсальный цифровой вольтметр В7-23; газовый счётчик; секундомер.
+
+ \section{Теоретическое введение:} Теплоёмкость определяется как частное $C = \frac{\triangle Q}{\triangle T}$. 
+ 	 Полная работа над молем газа при протекании по трубке выражается как $A = P_2V_2 - P_1V_1$, где $P_1,2$ - давление в начале и конце трубы, $V_1,2$ - объём моля газа при входе и выходе из трубы соответственно.  Изменение внутренней энергии представим как $\triangle U = U_2 - U_1$. По первому началу термодинамики:
+ 	 \begin{eqnarray}
+ 	 \begin{cases}
+ 	 	Q = \triangle U + A = (U_2 + P_2V_2) - (U_1 + P_1V_1) = \triangle H\\
+ 	 	H = U + PV = \nu C_vT + \nu RT = \nu C_pT
+	\end{cases}
+	\Rightarrow
+	Q = C_p \triangle T
+ 	 \end{eqnarray}
+ 	 , где $H$ - энтальпия газа.
+ 	 Тогда для удельной теплоёмкости верно следующее:
+ 	 \begin{equation}
+ 	 	c_p = \frac{Q}{m\triangle T} = \frac{UI - N}{m\triangle T}
+ 	 \end{equation}
+ 	 , где $UI$ - мощность нагревателя, $N$ - мощность тепловых потерь, $m$ - масса воздуха, проходящего через установку в единицу времени, $\triangle T$ - перепад температур воздуха.
+	
+\section{Экспериментальная установка:}
+	Чтобы обеспечить большую точность измерений, требуется, чтобы как можно меньшая доля тепла уходила на нагревание калориметра. Поэтому в работе через установку осуществляется прокачка и нагревание воздуха, чтобы в процессе измерений масса нагретого воздуха была сравнима с массой калориметра. Измеряются количество тепла, переданное нагревателем, масса протекающего воздуха и изменение его температуры.
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width = 1\textwidth]{unit.jpg}
+		\end{center}
+		\label{Установка для измерения удельной теплоёмкости воздуха при постоянном давлении}
+	\end{figure}
+	Измерения выполнялись при следующих условиях:
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ | m{4 cm} | m{2 cm}| m{2 cm} | m{2 cm} | m{3 cm} | } 
+			\hline
+			Температура, $^{\circ}C$ & $P_{atm}$, Па & $\beta$, мкВ/$^{\circ}C$ &  $\mu$, г/моль & Влажность, $\%$ \\ 
+			\hline
+			22,4 $\pm$ 0,1 & 99610 & 40,7 &  29 & 75 \\
+			\hline
+			\end{tabular}
+	\end{center}
+\end{table}
+	, где $\beta = \frac{\varepsilon}{\triangle T}$, $\varepsilon$ - падение напряжения на нагревательном элементе. В процессе вычислений универсальная газовая постоянная $R$ принималась равной $8,31$ Дж/моль$\cdot$К.
+	
+	
+\section{Выполнение измерений:}
+	Измерения были сделаны для трёх различных расходов воздуха. Для каждого из значений было взято 5 точек, соответствующих разным напряжениям U. Таблицы с полученными данными приведены ниже:
+\subsection{Первый расход:}
+	Чтобы измерить расход воздуха, мы засекали время, за которое газовый счётчик пропускает 1,5 л воздуха:
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ | m{2 cm} | m{1 cm}| m{1 cm} | m{1 cm} | m{1 cm} | m{1 cm} | } 
+			\hline
+			\textnumero & 1 & 2 &  3 & 4 & 5 \\ 
+			\hline
+			Время, с & 7,42 & 7,33 & 7,15 & 7,59 & 7,28 \\
+			\hline
+			\end{tabular}
+	\end{center}
+	\caption{Время протекания 1,5л через ГС при первом расходе}
+\end{table}
+	Следовательно, расход $Q_1$ и его погрешность могут быть оценены как: 
+	\begin{eqnarray}
+	\begin{cases}
+		Q_1 = 1,5 / 7,35 = 0.2\\
+		\triangle Q_1 = \frac{V}{\triangle T^2}\cdot \sigma(\triangle T) = 0,004 
+	\end{cases}
+	\Rightarrow
+	\begin{cases}
+	m = \frac{\mu PV}{RT} \approx \frac{29\cdot 996100 \cdot Q_1}{8,31\cdot 297,4} = 0,234\\
+	\sigma m = \frac{\mu P_{atm}}{RT}\cdot \sqrt{(\sigma Q)^2 + (\frac{Q}{T})^2(\sigma T)^2} \approx 0,005
+	\end{cases}
+	\end{eqnarray}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ | m{1cm} | m{4 cm} | m{2 cm}| m{2 cm} | m{2 cm} | m{2 cm} | m{2 cm} | } 
+			\hline
+			\textnumero & Напряжение $U$, В & Ток $I$, мА & $\varepsilon$, мкВ \\ 
+			\hline
+			1 & 3,214 & 93,5 & 46 \\
+			\hline
+			2 & 3,795 & 110,5 & 65 \\
+			\hline
+			3 & 4,4 & 128,2 & 86 \\
+			\hline
+			4 & 4,997 & 145,5 & 111 \\
+			\hline
+			5 & 5,615 & 163,6 & 142 \\
+			\hline
+			\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{Второй расход:}
+	Второе и третье измерения проводились в полной аналогии с первым.
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ | m{2 cm} | m{1 cm}| m{1 cm} | m{1 cm} | m{1 cm} | m{1 cm} | } 
+			\hline
+			\textnumero & 1 & 2 &  3 & 4 & 5 \\ 
+			\hline
+			Время, с & 17,54 & 16,8 & 17,3 & 17 & 17,36 \\
+			\hline
+			\end{tabular}
+	\end{center}
+	\caption{Время протекания 1,5л через ГС при втором расходе}
+\end{table}
+	Расход $Q_2$ и его погрешность могут быть оценены как: 
+	\begin{eqnarray}
+	\begin{cases}
+		Q_2 = 0,087\\
+		\triangle Q_2 = 0,002
+	\end{cases}
+	\Rightarrow
+	\begin{cases}
+	m = \frac{\mu PQ}{RT} \approx \frac{29\cdot 99610 \cdot Q_2}{8,31\cdot 297,4} = 0,102\\
+	\sigma m = \frac{\mu P_{atm}}{RT}\cdot \sqrt{(\sigma Q)^2 + (\frac{Q}{T})^2(\sigma T)^2} \approx 0,003
+	\end{cases}
+	\end{eqnarray}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ | m{1cm} | m{4 cm} | m{2 cm}| m{2 cm} | m{2 cm} | m{2 cm} | m{2 cm} | } 
+			\hline
+			\textnumero & Напряжение $U$, В & Ток $I$, мА & $\varepsilon$, мкВ \\ 
+			\hline
+			1 & 3,25 & 94,3 & 91 \\
+			\hline
+			2 & 3,803 & 110,6 & 135 \\
+			\hline
+			3 & 4,397 & 127,9 & 182 \\
+			\hline
+			4 & 5,004 & 145,6 & 242 \\
+			\hline
+			5 & 5,605 & 163,1 & 298 \\
+			\hline
+			\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{Третий расход:}
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ | m{2 cm} | m{1 cm}| m{1 cm} | m{1 cm} | m{1 cm} | m{1 cm} | } 
+			\hline
+			\textnumero & 1 & 2 &  3 & 4 & 5 \\ 
+			\hline
+			Время, с & 11,19 & 10,56 & 11,0 & 10,73 & 11,0 \\
+			\hline
+			\end{tabular}
+	\end{center}
+	\caption{Время протекания 1,5л через ГС при втором расходе}
+\end{table}
+	Расход $Q_2$ и его погрешность могут быть оценены как: 
+	\begin{eqnarray}
+	\begin{cases}
+		Q_3 = 0,138 \\
+		\triangle Q_3 = 0,003
+	\end{cases}
+	\Rightarrow
+	\begin{cases}
+	m = \frac{\mu PV}{RT} \approx \frac{29\cdot 99610 \cdot Q_3}{8,31\cdot 297,4} = 0,161\\
+	\sigma m = \frac{\mu P_{atm}}{RT}\cdot \sqrt{(\sigma Q)^2 + (\frac{Q}{T})^2(\sigma T)^2} \approx 0,004
+	\end{cases}
+	\end{eqnarray}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ | m{1cm} | m{4 cm} | m{2 cm}| m{2 cm} | m{2 cm} | m{2 cm} | m{2 cm} | } 
+			\hline
+			\textnumero & Напряжение $U$, В & Ток $I$, мА & $\varepsilon$, мкВ \\ 
+			\hline
+			1 & 3,25 & 94,3 & 91 \\
+			\hline
+			2 & 3,803 & 110,6 & 135 \\
+			\hline
+			3 & 4,397 & 127,9 & 182 \\
+			\hline
+			4 & 5,004 & 145,6 & 242 \\
+			\hline
+			5 & 5,605 & 163,1 & 298 \\
+			\hline
+			\end{tabular}
+	\end{center}
+\end{table}
+
+\section{Обработка измерений:}
+	Построим график $IU(\triangle T)$ для каждого из расходов воздуха. Поскольку $c_p = \frac{IU - N}{m\triangle T}$, то свободный коэффициент аппроксимирующей прямой $\approx$ мощность теплопотерь при данном расходе воздуха(первичная оценка). После того, как $c_p$ найдена, построим график $N(\triangle T) = IU - c_p\cdot m \cdot \triangle T$.
+\subsection{Первый расход:}
+\begin{figure}
+	\begin{center}
+	\includegraphics[width = 0.7\textwidth]{first_exp.png}
+	\caption{Зависимость мощности $IU$ на нагревателе от $m\cdot \triangle T$ при первом расходе воздуха.}
+	\end{center}
+\end{figure}
+	Из графика получаем следующие данные:
+\begin{eqnarray}
+	\begin{cases}
+		c_p = 1,126 \pm 0,010\\
+		N \approx 0,003 \pm 0,002
+	\end{cases}
+\end{eqnarray}	
+	Зависимость тепловых потерь от перепада температур на термопаре практически совпадает с прямой пропорциональностью:
+\begin{equation}
+		N_1(\triangle T) \approx \alpha_1 \triangle T, \alpha_1 = (0,263 \pm 0,003)\\
+\end{equation}
+\begin{figure}
+	\begin{center}
+	\includegraphics[width = 0.7\textwidth]{first_losts.png}
+	\caption{Тепловые потери в зависимости от перепада температур(первый расход). Строим график $N(\triangle T) = IU - c_p\cdot m \cdot \triangle T$.}
+	\end{center}
+\end{figure}
+\subsection{Второй расход:}
+\begin{figure}
+	\begin{center}
+	\includegraphics[width = 0.7\textwidth]{second_exp.png}
+	\caption{Зависимость мощности $IU$ на нагревателе от $m\cdot \triangle T$ при втором расходе воздуха.}
+	\end{center}
+\end{figure}
+	В данном случае удельная теплоёмкость $c_p$ и мощность тепловых потерь $N$ принимают следующие значения:
+\begin{eqnarray}
+	\begin{cases}
+		c_p = 1,17 \pm 0,02\\
+		N \approx 0,031 \pm 0,004
+	\end{cases}
+\end{eqnarray}
+	Тепловые потери, как и в первом случае, оказались пропорциональны температуре.
+	\begin{equation}
+		N_2(\triangle T) \approx \alpha_2 \triangle T, \alpha_2 = (0,119 \pm 0,002)
+	\end{equation}
+\begin{figure}
+	\begin{center}
+	\includegraphics[width = 0.7\textwidth]{second_losts.png}
+	\caption{Тепловые потери в зависимости от перепада температур(второй расход). Строим график $N(\triangle T) = IU - c_p\cdot m \cdot \triangle T$.}
+	\end{center}
+\end{figure}
+
+\subsection{Третий расход:}
+\begin{figure}
+	\begin{center}
+	\includegraphics[width = 0.7\textwidth]{third_exp.png}
+	\caption{Зависимость мощности $IU$ на нагревателе от $m\cdot \triangle T$ при третьем расходе воздуха.}
+	\end{center}
+\end{figure}
+\begin{eqnarray}
+	\begin{cases}
+		c_p = 1,11 \pm 0,01\\
+		N \approx 0,021 \pm 0,002
+	\end{cases}
+\end{eqnarray}
+Тепловые потери пропорциональны температуре:
+	\begin{equation}
+		N_3(\triangle T) \approx \alpha_3 \triangle T, \alpha_3 = (0,179 \pm 0,002)
+	\end{equation}
+\begin{figure}
+	\begin{center}
+	\includegraphics[width = 0.7\textwidth]{third_losts.png}
+	\caption{Тепловые потери в зависимости от перепада температур(третий расход). Строим график $N(\triangle T) = IU - c_p\cdot m \cdot \triangle T$.}
+	\end{center}
+\end{figure}
+
+\section{Итоги}
+\begin{figure}
+	\begin{center}
+	\includegraphics[width = 0.7\textwidth]{comparison.png}
+	\caption{Сравнительный график $IU(m\triangle T)$ для всех расходов воздуха.}
+	\end{center}
+\end{figure}
+	Значения удельных теплоёмкостей, полученные в ходе опыта(в Дж/г$\cdot$К):
+	\begin{eqnarray}
+	\begin{cases}
+	1) c_p = 1,126 \pm 0,010\\
+	2) c_p = 1,17 \pm 0,02\\
+	3) c_p = 1,11 \pm 0,01\\
+	\end{cases}
+	\end{eqnarray}
+	Итоговое значение удельных теплоёмкостей воздуха несколько выше, чем значение удельной теплоёмкости сухого воздуха из [1](примерно на $20-30\%$). Это можно объяснить тем, что влажность исследуемого воздуха имела значение $75\%$, следовательно, в воздухе присутствовало относительно большое количество частичек воды(по сравнению с ''сухим'' воздухом), что увеличивает теплоёмкость. Как побочный результат эксперимента, было проверено предположение о пропорциональности тепловых потерь разности температур на входе и выходе из установки.
+	
+\begin{thebibliography}{}
+    \bibitem{1}  Под редакцией проф. А.Д. Гладуна  -  Лабораторный практикум по общей физике. Термодинамика. Том 1
+\end{thebibliography}
+\end{document}

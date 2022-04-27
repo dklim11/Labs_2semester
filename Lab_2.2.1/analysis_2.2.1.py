@@ -1328,7 +1328,7 @@ for i in range(5):
     x_square_av += P[i]**2/5
     xy_av += D[i]*P[i]/5
 k = (xy_av - x_av*y_av)/(x_square_av - x_av**2)
-delta_k = np.sqrt(((y_square_av - y_av**2)/(x_square_av - x_av**2) - b**2)/c)
+delta_k = np.sqrt(((y_square_av - y_av**2)/(x_square_av - x_av**2) - k**2)/c)
 a = y_av - k*x_av
 
 print(k, delta_k, a)
